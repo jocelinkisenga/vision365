@@ -13,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view("pages.addArticle");
     }
 
     /**
@@ -29,7 +29,7 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        
     }
 
     /**

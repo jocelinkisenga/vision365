@@ -3,6 +3,7 @@
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -25,10 +26,10 @@ return new class extends Migration
 
         User::create([
             "name" => "patrick Ngoy",
-            "email" => "visionbilionaire365@gmail.com",
+            "email" => "visionbilion365@gmail.com",
             "password" => Hash::make("PatrickNgoy12123"),
             "role_id" => true,
-        ])
+        ]);
     }
 
     /**
