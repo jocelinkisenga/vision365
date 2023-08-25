@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -29,7 +30,17 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        
+        $imgName = Carbon::now()->timestamp .'patrickngoy.' . $request->file('image')->extension();
+        $path = $request->file("image")->storeAs('uploads',$imgName,'public');
+
+        Post::create([
+            "title" => $request->title,
+            "slug" => $request->slug,
+            "description" => $request->description
+        ]);
+
+        return redirect()->route("dashboard");
+
     }
 
     /**
@@ -37,7 +48,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+
+        return view("pages.post-details",compact("post"));
     }
 
     /**

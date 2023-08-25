@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CouponController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -15,13 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/',[HomeController::class,"index"])->name("home");
+Route::get("/live",[HomeController::class,"live"])->name("live");
+Route::get("article/{id]",[PostController::class,"one"])->name("posts.show");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -29,6 +28,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get("articles",[PostController::class,"index"])->name("posts.create");
     Route::post("articles",[PostController::class,"store"])->name("posts.store");
+    Route::get("/dashboard",[HomeController::class,"dashboard"])->name("dashboard");
+    Route::get("/coupons",[CouponController::class,"create"])->name("coupon.create");
+    Route::post("/coupons",[CouponController::class,"store"])->name("coupon.store");
 });
 
 require __DIR__.'/auth.php';

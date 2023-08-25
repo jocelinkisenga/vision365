@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Coupon;
 use App\Http\Requests\StoreCouponRequest;
 use App\Http\Requests\UpdateCouponRequest;
+use App\Models\Image;
+use Carbon\Carbon;
 
 class CouponController extends Controller
 {
@@ -21,7 +23,7 @@ class CouponController extends Controller
      */
     public function create()
     {
-        //
+        return view("pages.addCoupon");
     }
 
     /**
@@ -29,7 +31,18 @@ class CouponController extends Controller
      */
     public function store(StoreCouponRequest $request)
     {
-        //
+        $coupon = Coupon::create([
+            "title" => $request->title,
+            "description" => $request->description
+        ]);
+
+        foreach ($request->image as $key => $image) {
+            $imgName = Carbon::now()->timestamp . $key . '_mns.' . $image->extension();
+            $path = $image->storeAs('uploads',$imgName,'public');
+            Image::create(['coupon_id'=>$coupon->id,'image_url'=>$imgName]);
+
+        }
+        return redirect()->route("dashboard");
     }
 
     /**

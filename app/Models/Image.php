@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
+
+    protected $fillable = ["coupon_id","image_url"];
+
+    public function coupon () {
+        return $this->belongsTo(Coupon::class);
+    }
 }
