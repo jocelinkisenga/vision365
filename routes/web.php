@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,"index"])->name("home");
 Route::get("/live",[HomeController::class,"live"])->name("live");
-Route::get("article/{id]",[PostController::class,"one"])->name("posts.show");
+Route::get("article/{id}",[PostController::class,"one"])->name("posts.show");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
