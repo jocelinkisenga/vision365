@@ -36,7 +36,8 @@ class PostController extends Controller
         Post::create([
             "title" => $request->title,
             "slug" => $request->slug,
-            "description" => $request->description
+            "image" => $imgName,
+             "description" => $request->description
         ]);
 
         return redirect()->route("dashboard");
@@ -46,9 +47,9 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(int $id)
     {
-
+        $post = Post::findOrFail($id);
         return view("pages.post-details",compact("post"));
     }
 
@@ -71,8 +72,9 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function delete(int $id)
     {
-        //
+        Post::destroy($id);
+        return redirect()->back();
     }
 }

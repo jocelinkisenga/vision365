@@ -15,7 +15,10 @@ class CouponController extends Controller
      */
     public function index()
     {
-        //
+
+        $recentCoupons = Coupon::latest()->limit(12)->get();
+
+        return view("pages.coupons",compact("recentCoupons"));
     }
 
     /**
@@ -72,8 +75,10 @@ class CouponController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Coupon $coupon)
+    public function delete(int $id)
     {
-        //
+        Coupon::destroy($id);
+
+        return redirect()->back();
     }
 }

@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,"index"])->name("home");
 Route::get("/live",[HomeController::class,"live"])->name("live");
-Route::get("article/{id}",[PostController::class,"one"])->name("posts.show");
+Route::get("article/{id}",[PostController::class,"show"])->name("posts.show");
+Route::get("couponsHome/",[CouponController::class,"index"])->name("coupons.index");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -31,6 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::get("/dashboard",[HomeController::class,"dashboard"])->name("dashboard");
     Route::get("/coupons",[CouponController::class,"create"])->name("coupon.create");
     Route::post("/coupons",[CouponController::class,"store"])->name("coupon.store");
+    Route::get("delete/article/{id}",[PostController::class,"delete"])->name("post.delete");
+    Route::get("delete/coupon/{id}",[CouponController::class,"delete"])->name("coupon.delete");
 });
 
 require __DIR__.'/auth.php';

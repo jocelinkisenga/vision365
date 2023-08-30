@@ -61,7 +61,8 @@
                                     {{ $item->title }}
                                 </th>
                                 <td class="px-6 py-4">
-                                    Silver
+                                    <a href="{{ route("coupon.delete",["id" => $item->id]) }}" class=" bg-red-500 text-white mr-3 p-2 rounded">effacer</a>
+                                    <a href="" class=" bg-green-700 text-white mr-3 p-2 rounded">mettre à jour</a>
                                 </td>
                             </tr>
                             @endforeach
@@ -108,7 +109,8 @@
                                     {{$item->title}}
                                 </th>
                                 <td class="px-6 py-4">
-                                    Accessories
+                                    <a href="{{ route("post.delete",["id" => $item->id]) }}" class=" bg-red-500 text-white mr-3 p-2 rounded">effacer</a>
+                                    <a href="" class=" bg-green-700 text-white mr-3 p-2 rounded">mettre à jour</a>
                                 </td>
                             </tr>
                             @endforeach

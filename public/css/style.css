@@ -689,6 +689,12 @@ mark {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.card-img-md {
+    height: 205px;
+    width: 245px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 .card-meta {
   display: flex;
   align-items: center;
@@ -724,6 +730,10 @@ mark {
 }
 .card-meta-tag {
   margin-bottom: 0;
+}
+.logo {
+    width: 100px;
+    height: 100px;
 }
 .card-meta-tag li {
   border: 0 !important;

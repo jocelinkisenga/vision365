@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Reader | Hugo Personal Blog Template</title>
+    <title>vision billion 365</title>
 
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -40,20 +40,18 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-white">
                 <a class="navbar-brand order-1" href="/">
-                    <img class="img-fluid" width="100px" src="{{  asset("vision.jpg")}}"
+                    <img class="img-fluid slider-sm logo" src="{{  asset("vision.jpg")}}"
                         alt="vision 365" class="rounded-circle">
                 </a>
                 <div class="collapse navbar-collapse text-center order-lg-2 order-3" id="navigation">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="/" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link" href="/" >
                                 Accueil
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link" href="{{ route("coupons.index") }}" >
                                 coupons
                             </a>
                         </li>
@@ -61,28 +59,27 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route("live") }}">Match en direct <i class="ti-location-arrow text-danger"></i> </a>
                         </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">contact
-                            </a>
-                        </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="shop.html">A propos</a>
                         </li>
+                        @auth
+                        <li class="nav-item dropdown">
+                            <a class="nav-link btn btn-primary text-white" href="{{ route("dashboard") }}" >Dashboard
+                            </a>
+                        </li>
+                        @endauth
+
+
+
                     </ul>
                 </div>
 
                 <div class="order-2 order-lg-3 d-flex align-items-center">
-                    <select class="m-2 border-0 bg-transparent" id="select-language">
-                        <option id="en" value="" selected>En</option>
-                        <option id="fr" value="">Fr</option>
-                    </select>
+
 
                     <!-- search -->
                     <form class="search-bar">
-                        <input id="search-query" name="s" type="search" placeholder="Type &amp; Hit Enter...">
+                        <input id="search-query" name="s" type="search" placeholder="faites une recherche">
                     </form>
 
                     <button class="navbar-toggler border-0 order-1" type="button" data-toggle="collapse"

@@ -4,10 +4,10 @@
 <section class="section">
   <div class="container">
     <div class="row justify-content-center">
-      <div class=" col-lg-9   mb-5 mb-lg-0">
+      <div class=" col-lg-6   mb-5 mb-lg-0">
         <article>
           <div class="post-slider mb-4">
-            <img src="{{ asset("images/post/post-2.jpg") }}" class="card-img" alt="post-thumb">
+            <img src="{{asset('storage/uploads/'. $post->image)}}" class="card-img" alt="post-thumb">
           </div>
 
           <h1 class="h2">{{ $post->title }} </h1>
@@ -26,9 +26,6 @@
             </li>
             <li class="list-inline-item">
               <ul class="card-meta-tag list-inline">
-                <li class="list-inline-item"><a href="tags.html">Color</a></li>
-                <li class="list-inline-item"><a href="tags.html">Recipe</a></li>
-                <li class="list-inline-item"><a href="tags.html">Fish</a></li>
               </ul>
             </li>
           </ul>

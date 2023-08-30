@@ -7,12 +7,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 mx-auto">
-                    <h1 class="mb-5 mt-4">Rejoignez nous sur Telegram !!</h1>
-                    <a href="" class="btn btn-lg btn-primary mb-4">cliquez ici <i class="ti-share"></i></a>
-                    {{-- <ul class="list-inline widget-list-inline">
+                    <h1 class="mb-5">Parie sur les meilleurs<br>de nos coupons !!</h1>
+                    <ul class="list-inline widget-list-inline">
                         <li class="list-inline-item"><a href="">creation</a></li>
                         <li class="list-inline-item"><a href="">Developpement</a></li>
-                        <li class="list-inline-item"><a href="">personnel</a></li>
+                        <li class="list-inline-item"><a href="">coupon</a></li>
                         <li class="list-inline-item"><a href="">Richesse</a></li>
                         <li class="list-inline-item"><a href="">Education</a></li>
                         <li class="list-inline-item"><a href="">Santé</a></li>
@@ -22,7 +21,7 @@
                         <li class="list-inline-item"><a href="">Bravoure</a></li>
                         <li class="list-inline-item"><a href="">Session</a></li>
                         <li class="list-inline-item"><a href="">Paris</a></li>
-                    </ul> --}}
+                    </ul>
                 </div>
             </div>
         </div>
@@ -78,99 +77,6 @@
         </svg>
     </div>
     <!-- end of banner -->
-    <section class="section pb-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-5">
-                    <h2 class="h5 section-title">Article du jour</h2>
-                    <article class="card">
-                        <div class="post-slider slider-sm">
-                            <img src="{{asset('storage/uploads/'. $latestPost->image)}}" class="card-img-top" alt="post-thumb">
-                        </div>
-
-                        <div class="card-body">
-                            <h3 class="h4 mb-3"><a class="post-title"
-                                    href="post-details.html">{{ $latestPost->title }}</a></h3>
-                            <ul class="card-meta list-inline">
-                                <li class="list-inline-item">
-                                    <a href="{{ route('posts.show', ['id' => $latestPost->id]) }}" class="card-meta-author">
-                                        <img src="images/john-doe.jpg">
-                                        <span>Patrick Ngoy</span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <i class="ti-timer"></i>2 Min de lecture
-                                </li>
-                                <li class="list-inline-item">
-                                    <i class="ti-calendar"></i>{{ $latestPost->created_at }}
-                                </li>
-                            </ul>
-                            <p>{{ $latestPost->slug }}</p>
-                            <a href="{{ route('posts.show', ['id' => $latestPost->id]) }}"
-                                class="btn btn-outline-primary">lire plus</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-4 mb-5">
-                    <h2 class="h5 section-title">Coupons du jour</h2>
-
-                    @foreach ($recentCoupons as $item)
-                        <article class="card mb-4">
-                            <div class="card-body d-flex">
-                                <img class="card-img-sm" src="{{asset('storage/uploads/'. $item->images()->first()->image_url)}}">
-                                <div class="ml-3">
-                                    <h4><a href" class="post-title">{{ $item->title }}</a>
-                                    </h4>
-                                    <ul class="card-meta list-inline mb-0">
-                                        <li class="list-inline-item mb-0">
-                                            <i class="ti-calendar"></i>{{ $item->created_at }}
-                                        </li>
-                                        <li class="list-inline-item mb-0">
-                                            <i class="ti-timer"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </article>
-                    @endforeach
-
-                </div>
-
-                <div class="col-lg-4 mb-5">
-                    <h2 class="h5 section-title">Article populaire</h2>
-
-                    <article class="card">
-                        <div class="post-slider slider-sm">
-                            <img src="{{asset('storage/uploads/'. $popularPost->image)}}" class="card-img-top" alt="post-thumb">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="h4 mb-3"><a class="post-title"
-                                    href="post-details.html">{{ $popularPost->title }}</a></h3>
-                            <ul class="card-meta list-inline">
-                                <li class="list-inline-item">
-                                    <a href="author-single.html" class="card-meta-author">
-                                        <img src="" alt="Kate
-                                            Stone">
-                                        <span>Patrick Ngoy</span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <i class="ti-timer"></i>2 Min
-                                </li>
-                                <li class="list-inline-item">
-                                    <i class="ti-calendar"></i>{{ $popularPost->created_at }}
-                                </li>
-                                <a href="{{ route('posts.show', ['id' => $popularPost->id]) }}"
-                                    class="btn btn-outline-primary">voir plus</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12">
-                    <div class="border-bottom border-default"></div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="section-sm">
         <div class="container">
@@ -180,8 +86,8 @@
                 @foreach ($recentCoupons as $item)
                     <div class="col-lg-3  mb-5 mb-lg-0">
 
-                        <article class="card mb-4 ">
-                            <div class="post-slider card-img-md">
+                        <article class="card mb-4">
+                            <div class="post-slider">
                                 @foreach ($item->images->all() as $itemImage)
                                 <img src="{{asset('storage/uploads/'. $itemImage->image_url)}}" class="card-img-top card-img-md" alt="post-thumb">
                                 @endforeach
