@@ -89,7 +89,7 @@
                         <article class="card mb-4">
                             <div class="post-slider">
                                 @foreach ($item->images->all() as $itemImage)
-                                <img src="{{asset('storage/uploads/'. $itemImage->image_url)}}" class="card-img-top card-img-mdD" alt="post-thumb">
+                                <img src="{{asset('storage/uploads/'. $itemImage->image_url)}}" class="card-img-top card-img-md" alt="post-thumb">
                                 @endforeach
                             </div>
                             <div class="card-body">
