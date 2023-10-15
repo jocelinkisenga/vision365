@@ -213,4 +213,46 @@
         </div>
         </div>
     </section>
+
+    <section class="section-sm">
+        <div class="container">
+            <h2 class="h5 section-title">nos recentes videos</h2>
+            <div class="row justify-content-center">
+
+                @foreach ($recentVideos as $item)
+                    <div class="col-lg-3  mb-5 mb-lg-0">
+
+                        <article class="card mb-4 ">
+                            <div class="post-slider card-img-md">
+                               <video src="{{asset('storage/uploads/videos/'. $item->video_name)}}" poster="{{ asset("vision.jpg") }}" controls buffered preload="none"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></video>
+
+
+                            </div>
+                            <div class="card-body">
+                                <h3 class="mb-3"><a class="post-title"
+                                        href="post-elements.html">{{ $item->title }}.</a></h3>
+                                <ul class="card-meta list-inline">
+                                    <li class="list-inline-item">
+                                        <a href="author-single.html" class="card-meta-author">
+                                            <img src="images/john-doe.jpg" alt="John Doe">
+                                            <span>Patrick Ngoy</span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <i class="ti-calendar"></i>{{ $item->created_at }}
+                                    </li>
+                                </ul>
+                                <a href="post-elements.html" class="btn btn-outline-primary">Découvrez plus</a>
+                            </div>
+                        </article>
+                    </div>
+                @endforeach
+            </div>
+
+        </div>
+        </div>
+    </section>
 @endsection

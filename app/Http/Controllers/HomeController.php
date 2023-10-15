@@ -18,7 +18,12 @@ class HomeController extends Controller
         $popularCoupon = Coupon::latest()->first();
         $recentVideos = Video::latest()->limit(8)->get();
 
-        return view("pages.index",compact("latestPost","popularPost","recentPosts","recentCoupons","popularCoupon","recentVideos"));
+        return view("pages.index",compact("latestPost",
+                                         "popularPost",
+                                         "recentPosts",
+                                         "recentCoupons",
+                                         "popularCoupon",
+                                         "recentVideos"));
     }
 
     public function dashboard()  {
