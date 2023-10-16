@@ -156,7 +156,7 @@
                     <div class="border-bottom border-default"></div>
                 </div>
             </div>
-            @end
+            @endif
         </div>
     </section>
 
