@@ -58,8 +58,8 @@ return [
     // 'url' => env('APP_URL', 'http://localhost'),
 
     // 'asset_url' => env('ASSET_URL'),
-    'url' => env('APP_URL', 'https://yourdomainexample.herokuapp.com'),
-    'asset_url' => env('ASSET_URL', 'https://yourdomainexample.herokuapp.com'),
+    'url' => env('APP_URL', 'https://visionbillion-416bf60936f4.herokuapp.com/'),
+    'asset_url' => env('ASSET_URL', 'https://visionbillion-416bf60936f4.herokuapp.com/'),
 
     /*
     |--------------------------------------------------------------------------
