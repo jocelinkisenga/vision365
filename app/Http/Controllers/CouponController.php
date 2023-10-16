@@ -7,6 +7,7 @@ use App\Http\Requests\StoreCouponRequest;
 use App\Http\Requests\UpdateCouponRequest;
 use App\Models\Image;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class CouponController extends Controller
 {
@@ -41,8 +42,8 @@ class CouponController extends Controller
 
         foreach ($request->image as $key => $image) {
             $imgName = Carbon::now()->timestamp . $key . '_mns.' . $image->extension();
-            $path = $image->storeAs('uploads',$imgName,'public');
-            Image::create(['coupon_id'=>$coupon->id,'image_url'=>$imgName]);
+            $path = Storage::disk('public')->put('uploads/', $imgName);
+            Image::create(['coupon_id'=>$coupon->id,'image_url'=>$path]);
 
         }
         return redirect()->route("dashboard");
