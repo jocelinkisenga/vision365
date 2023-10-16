@@ -104,7 +104,7 @@
                     @foreach ($recentCoupons as $item)
                         <article class="card mb-4">
                             <div class="card-body d-flex">
-                                <img class="card-img-sm" src="{{asset('storage/uploads/'. $item->images()->first()->image_url)}}">
+                                <img class="card-img-sm" src="{{asset($item->images()->first()->image_url)}}">
                                 <div class="ml-3">
                                     <h4><a href" class="post-title">{{ $item->title }}</a>
                                     </h4>
