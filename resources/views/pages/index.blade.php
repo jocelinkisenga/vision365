@@ -71,9 +71,9 @@
                     <h2 class="h5 section-title">Article du jour</h2>
                     <article class="card">
                         <div class="post-slider slider-sm">
-                            <img src="{{asset('storage/uploads/'. $latestPost->image) ?? asset('assets/img/ivancik - Copie.jpg')}}" class="card-img-top" alt="post-thumb">
+                            <img src="{{asset('assets/img/ivancik - Copie.jpg')}}" class="card-img-top" alt="post-thumb">
                         </div>
-
+{{-- asset('storage/uploads/'. $latestPost->image) ??  --}}
                         <div class="card-body">
                             <h3 class="h4 mb-3"><a class="post-title"
                                     href="post-details.html">{{ $latestPost->title }}</a></h3>
