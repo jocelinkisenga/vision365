@@ -9,20 +9,6 @@
                 <div class="col-lg-9 mx-auto">
                     <h1 class="mb-5 mt-4">Rejoignez nous sur Telegram !!</h1>
                     <a href="" class="btn btn-lg btn-primary mb-4">cliquez ici <i class="ti-share"></i></a>
-                    {{-- <ul class="list-inline widget-list-inline">
-                        <li class="list-inline-item"><a href="">creation</a></li>
-                        <li class="list-inline-item"><a href="">Developpement</a></li>
-                        <li class="list-inline-item"><a href="">personnel</a></li>
-                        <li class="list-inline-item"><a href="">Richesse</a></li>
-                        <li class="list-inline-item"><a href="">Education</a></li>
-                        <li class="list-inline-item"><a href="">Santé</a></li>
-                        <li class="list-inline-item"><a href="">Connaissance</a></li>
-                        <li class="list-inline-item"><a href="">Vidéo</a></li>
-                        <li class="list-inline-item"><a href="">Réseau</a></li>
-                        <li class="list-inline-item"><a href="">Bravoure</a></li>
-                        <li class="list-inline-item"><a href="">Session</a></li>
-                        <li class="list-inline-item"><a href="">Paris</a></li>
-                    </ul> --}}
                 </div>
             </div>
         </div>
