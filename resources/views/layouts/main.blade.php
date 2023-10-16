@@ -40,8 +40,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-white">
                 <a class="navbar-brand order-1" href="/">
-                    <img class="img-fluid slider-sm logo" src="{{  asset("vision.jpg")}}"
-                        alt="vision 365" class="rounded-circle">
+                    <img class="img-fluid slider-sm logo rounded-circle" src="{{  asset("vision.jpg")}}"
+                        alt="vision 365" >
                 </a>
                 <div class="collapse navbar-collapse text-center order-lg-2 order-3" id="navigation">
                     <ul class="navbar-nav mx-auto">
