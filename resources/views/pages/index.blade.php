@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-9 mx-auto">
                     <h1 class="mb-5 mt-4">Rejoignez nous sur Telegram !!</h1>
-                    <a href="" class="btn btn-lg btn-primary mb-4">cliquez ici <i class="ti-share"></i></a>
+                    <a href="https://t.me/+L_JHCPMswwRhMjg0" target="_blank" class="btn btn-lg btn-primary mb-4">cliquez ici <i class="ti-share"></i></a>
                 </div>
             </div>
         </div>
