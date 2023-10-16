@@ -55,9 +55,11 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    // 'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL'),
+    // 'asset_url' => env('ASSET_URL'),
+    'url' => env('APP_URL', 'https://yourdomainexample.herokuapp.com'),
+    'asset_url' => env('ASSET_URL', 'https://yourdomainexample.herokuapp.com'),
 
     /*
     |--------------------------------------------------------------------------
